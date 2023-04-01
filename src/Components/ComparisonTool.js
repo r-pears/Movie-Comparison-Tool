@@ -86,10 +86,10 @@ const ComparisonTool = (props) => {
         <h2>{similarities > 2 ? 'Yes' : 'No'}</h2>
         <div onClick={() => resetSelections()} className='cursor-pointer'>Clear selection</div>
         <ul>
-          {prodYear && <li>{prodYear}</li>}
-          {parentalRating && <li>{parentalRating}</li>}
-          {imdbRating && <li>{imdbRating}</li>}
-          {duration && <li>{duration}</li>}
+          {prodYear && <li>Production year: {prodYear}</li>}
+          {parentalRating && <li>Parental rating: {parentalRating}</li>}
+          {imdbRating && <li>IMDB rating: {imdbRating}</li>}
+          {duration && <li>Duration: {duration}</li>}
           {commonActors.length > 0 && <li>Common actors: <ul>{commonActors.map(actor => {
             return (
               <li>{actor}</li>
