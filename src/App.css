@@ -5,6 +5,15 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /** Loading Frame */
 
 .loadingFrame {
