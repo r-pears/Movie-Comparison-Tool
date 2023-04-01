@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css';
 import getPage from './api/content';
-import Grid from './Components/Grid';
+import ComparisonTool from './Components/ComparisonTool';
 
 const App = () => {
 	// Handles the fetching of the data.
@@ -29,7 +29,7 @@ const App = () => {
 	}
 
 	return (
-		<Grid movieData={data} />
+		<ComparisonTool movieData={data} />
 	);
 }
 
