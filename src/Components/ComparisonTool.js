@@ -9,6 +9,7 @@ const ComparisonTool = (props) => {
   useEffect(() => {
     if (chosenVideos.length !== 0) {
       setShowComparison(true)
+      console.log(chosenVideos)
     }
   }, [chosenVideos])
 
@@ -40,15 +41,15 @@ const ComparisonTool = (props) => {
     let parentalRating;
     let imdbRating;
     // Check similarities between video 1 and video 2
-    if (video1.production.year === video2.production.year) {
+    if (video1?.production.year === video2?.production.year) {
       similarities++;
       prodYear = video1.production.year;
     }
-    if (video1.parentalRating === video2.parentalRating) {
+    if (video1?.parentalRating === video2?.parentalRating) {
       similarities++;
       parentalRating = video1.parentalRating;
     }
-    if (Math.ceil(video1.imdb.rating) === Math.ceil(video2.imdb.rating)) {
+    if (Math.ceil(video1.imdb?.rating) === Math.ceil(video2.imdb?.rating)) {
       similarities++;
       imdbRating = Math.ceil(video1.imdb.rating);
     }
