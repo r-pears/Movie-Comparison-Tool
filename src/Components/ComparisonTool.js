@@ -9,7 +9,6 @@ const ComparisonTool = (props) => {
   useEffect(() => {
     if (chosenVideos.length !== 0) {
       setShowComparison(true)
-      console.log(chosenVideos)
     }
   }, [chosenVideos])
 
@@ -74,12 +73,10 @@ const ComparisonTool = (props) => {
         })
       })
     }
-      
 
     if (commonActors.length > 0) {
       similarities++
     }
-    console.log(similarities, commonActors)
 
     return (
       <>
