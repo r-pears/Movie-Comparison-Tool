@@ -22,8 +22,8 @@ const App = () => {
 
 	if (isLoading) {
 		return (
-			<div>
-				Loading data
+			<div className='loadingFrame'>
+				<div className='loadingSpinner' />
 			</div>
 		);
 	}
