@@ -29,7 +29,7 @@ const App = () => {
 	}
 
 	return (
-		<ComparisonTool movieData={data} />
+		<ComparisonTool data={data} />
 	);
 }
 
