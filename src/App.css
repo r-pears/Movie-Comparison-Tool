@@ -1,0 +1,36 @@
+/** Global styling */
+* {
+  margin: 0;
+  padding: 0;;
+}
+
+/** Loading Frame */
+
+.loadingFrame {
+  height: calc(100vh - 150px);
+  width: 100vw;
+  background-color: #7A7A7A ;
+  padding-top: 150px;
+}
+
+.loadingSpinner {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #CB0F0F;
+  width: 75px;
+  height: 75px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
