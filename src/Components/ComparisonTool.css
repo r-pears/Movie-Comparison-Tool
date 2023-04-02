@@ -1,12 +1,76 @@
 .mainSection {
   height: 100vh;
   width: 100vw;
-  background-color: #7A7A7A;
-  overflow: hidden;
+  background-color: #E5E5E5;
+  overflow: scroll;
 }
 
 /** Comparison section */
 .comparisonSection {
   background-color: #000;
   color: #E5E5E5;
+  position: absolute;
+  top: 0;
+  width: calc(100% - 80px);
+  min-height: 250px;
+  height: fit-content;
+  text-align: center;
+  padding: 40px;
+}
+
+.movieComparison {
+  margin-top: 40px;
+  border: 1px solid #E5E5E5;
+  width: 30%;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 5px;
+  height: fit-content;
+  box-shadow: 5px 5px 5px #e5e5e53d;
+}
+
+.similaritiesSection {
+  width: 30%;
+}
+
+.green {
+  color: #0EBF00;
+}
+
+.red {
+  color: #DB0000;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+}
+
+ul {
+  text-align: left;
+}
+
+.noMarker {
+  list-style: none;
+}
+
+/** Grid section */
+.gridSection {
+  padding-top: calc(250px + 80px);
+  height: fit-content;
+}
+
+/** Media queries*/
+@media screen and (max-width: 500px) {
+  .comparisonSection {
+    padding: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .movieComparison{
+    font-size: 10px;
+  }
+
+  .gridSection {
+    padding-top: calc(250px + 40px);
+  }
 }

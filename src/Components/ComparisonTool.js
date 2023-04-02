@@ -5,11 +5,11 @@ import './ComparisonTool.css';
 const ComparisonTool = (props) => {
   const [chosenVideos, setChosenVideos] = useState([]);
   const [showComparison, setShowComparison] = useState(false);
+  const [showActors, setShowActors] = useState(false);
 
   useEffect(() => {
     if (chosenVideos.length !== 0) {
       setShowComparison(true)
-      console.log(chosenVideos)
     }
   }, [chosenVideos])
 
@@ -81,18 +81,25 @@ const ComparisonTool = (props) => {
 
     return (
       <>
-        <h2>{similarities > 2 ? 'Yes' : 'No'}</h2>
-        <div onClick={() => resetSelections()} className='cursor-pointer'>Clear selection</div>
-        <ul>
-          {prodYear && <li>Production year: {prodYear}</li>}
-          {parentalRating && <li>Parental rating: {parentalRating}</li>}
-          {imdbRating && <li>IMDB rating: {imdbRating}</li>}
-          {duration && <li>Duration: {duration}</li>}
-          {commonActors.length > 0 && <li>Common actors: <ul>{commonActors.map(actor => {
-            return (
-              <li>{actor}</li>
-            )
-          })}</ul></li>}
+        <h2 className={'pt2 ' + (similarities > 2 ? 'green' : 'red')}>{similarities > 2 ? 'Yes' : 'No'}</h2>
+        <div onClick={() => resetSelections()} className='button mt2 cursor-pointer'>Clear selection</div>
+        <h3 className='mt2'>Similarities</h3>
+        <ul className='mt2 noMarker'>
+          {prodYear && <li><b>Production year: </b>{prodYear}</li>}
+          {parentalRating && <li><b>Parental rating: </b>{parentalRating}</li>}
+          {imdbRating && <li><b>IMDB rating: </b>{imdbRating}</li>}
+          {duration && <li><b>Duration: </b>{duration}</li>}
+          {commonActors.length > 0 && <li><b>Common actors </b> <img onClick={() => setShowActors(!showActors)} className={'cursor-pointer ' + (showActors ? 'arrowUp' : '') } height={10} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVXqRw8E167DcwfMAH1ZmHHcoJTePXYR9vpA&usqp=CAU' alt='arrow'/>
+            <>
+              {showActors &&
+                <ul>{commonActors.map(actor => {
+                return (
+                  <li>{actor}</li>
+                )
+              })}</ul>                 
+              }
+            </>
+          </li>}
         </ul>
       </>
     )
@@ -104,10 +111,10 @@ const ComparisonTool = (props) => {
       <div className='comparisonSection'>
         <h1>Are these similar?</h1>
         {chosenVideos.length === 0 &&
-        <h4>Select two movies below to see their similarities</h4>
+        <h4 className='pt2'>Select two movies below to see their similarities</h4>
         }
         {showComparison &&
-          <div className='flex'>
+          <div className='flex justify-between'>
             <div className='movieComparison'>
               <h3>{chosenVideos[0].title}</h3>
             </div>
