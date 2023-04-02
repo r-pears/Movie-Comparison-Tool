@@ -12,7 +12,7 @@ const App = () => {
 		// Loads the data
 		getPage()
 			.then(resp => {
-				setData(resp.blocks[0].products)
+				setData(resp)
 				setIsLoading(false);
 			})
 			.catch(error => {

@@ -20,13 +20,10 @@
 
 .movieComparison {
   margin-top: 40px;
-  border: 1px solid #E5E5E5;
   width: 30%;
   box-sizing: border-box;
-  padding: 20px;
   border-radius: 5px;
   height: fit-content;
-  box-shadow: 5px 5px 5px #e5e5e53d;
 }
 
 .similaritiesSection {
@@ -56,15 +53,14 @@ ul {
 /** Grid section */
 .gridSection {
   height: fit-content;
-  padding: 335px 45px 45px 45px;
+  padding: 460px 45px 45px 45px;
   justify-content: center;
 }
 
 /** Box showing video */
 .box {
   border: 1px solid #e5e5e53d;
-  padding: 45px;
-  width: 15vw;
+  width: 20vw;
   margin-top: 20px;
   margin-right: 10px;
   display: flex;

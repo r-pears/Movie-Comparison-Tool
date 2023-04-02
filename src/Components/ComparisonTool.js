@@ -6,6 +6,7 @@ const ComparisonTool = (props) => {
   const [showComparison, setShowComparison] = useState(false);
   const [showActors, setShowActors] = useState(false);
 
+  console.log(props)
   useEffect(() => {
     if (chosenVideos.length !== 0) {
       setShowComparison(true)
@@ -118,7 +119,7 @@ const ComparisonTool = (props) => {
         {showComparison &&
           <div className='flex justify-between'>
             <div className='movieComparison'>
-              <h3>{chosenVideos[0].title}</h3>
+              <img  src={'https://via.placeholder.com/240x320.png?text=' + chosenVideos[0].title} alt={chosenVideos[0].title} />
             </div>
             {chosenVideos.length === 2 &&
               <div className='similaritiesSection'>
@@ -126,17 +127,17 @@ const ComparisonTool = (props) => {
               </div>
             }
             <div className='movieComparison'>
-              <h3>{chosenVideos[1]?.title}</h3>
+              {chosenVideos.length === 2 &&
+                <img src={'https://via.placeholder.com/240x320.png?text=' + chosenVideos[1]?.title} alt={chosenVideos[1]?.title} />
+              }
             </div>
           </div>
         }
       </div>
       <div className='gridSection flex'>
-        {props.data.map(video => {
+        {props.data.blocks[0].products.map(video => {
           return (
-            <div onClick={() => {chooseVideo(video)}} key={video.guid} className={'cursor-pointer box ' + (chosenVideos.includes(video) ? 'chosen' : '')}>
-              <h4>{video.title}</h4>      
-            </div>
+              <img onClick={() => { chooseVideo(video) }} key={video.guid} className={'cursor-pointer box ' + (chosenVideos.includes(video) ? 'chosen' : '')} src={'https://via.placeholder.com/240x320.png?text=' + video.title} alt={video.title} />
           )
         })}
       </div>
