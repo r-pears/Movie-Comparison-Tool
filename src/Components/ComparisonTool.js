@@ -83,6 +83,9 @@ const ComparisonTool = (props) => {
         <h2 className={'pt2 ' + (similarities > 2 ? 'green' : 'red')}>{similarities > 2 ? 'Yes' : 'No'}</h2>
         <div onClick={() => resetSelections()} className='button mt2 cursor-pointer'>Clear selection</div>
         <h3 className='mt2'>Similarities</h3>
+        {similarities === 0 &&
+          <p className='mt2'>None found</p>
+        }
         <ul className='mt2 noMarker'>
           {prodYear && <li><b>Production year: </b>{prodYear}</li>}
           {parentalRating && <li><b>Parental rating: </b>{parentalRating}</li>}
@@ -131,7 +134,7 @@ const ComparisonTool = (props) => {
       <div className='gridSection flex'>
         {props.data.map(video => {
           return (
-            <div onClick={() => {chooseVideo(video)}} key={video.guid} className='cursor-pointer '>
+            <div onClick={() => {chooseVideo(video)}} key={video.guid} className={'cursor-pointer box ' + (chosenVideos.includes(video) ? 'chosen' : '')}>
               <h4>{video.title}</h4>      
             </div>
           )
