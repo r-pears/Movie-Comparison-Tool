@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Box from './Box';
 import './ComparisonTool.css';
 
 const ComparisonTool = (props) => {
@@ -132,8 +131,8 @@ const ComparisonTool = (props) => {
       <div className='gridSection flex'>
         {props.data.map(video => {
           return (
-            <div onClick={() => {chooseVideo(video)}} key={video.guid} className='cursor-pointer'>
-              <Box video={video} />       
+            <div onClick={() => {chooseVideo(video)}} key={video.guid} className='cursor-pointer '>
+              <h4>{video.title}</h4>      
             </div>
           )
         })}

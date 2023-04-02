@@ -55,8 +55,8 @@ ul {
 
 /** Grid section */
 .gridSection {
-  padding-top: calc(250px + 80px);
   height: fit-content;
+  padding: calc(250px + 80px) 45px 45px 45px;
 }
 
 /** Media queries*/
