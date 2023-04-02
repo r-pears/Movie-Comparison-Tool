@@ -119,7 +119,7 @@ const ComparisonTool = (props) => {
         {showComparison &&
           <div className='flex justify-between'>
             <div className='movieComparison'>
-              <img  src={'https://via.placeholder.com/240x320.png?text=' + chosenVideos[0].title} alt={chosenVideos[0].title} />
+              <img className='mobileImg' src={'https://via.placeholder.com/240x320.png?text=' + chosenVideos[0].title} alt={chosenVideos[0].title} />
             </div>
             {chosenVideos.length === 2 &&
               <div className='similaritiesSection'>
@@ -128,7 +128,7 @@ const ComparisonTool = (props) => {
             }
             <div className='movieComparison'>
               {chosenVideos.length === 2 &&
-                <img src={'https://via.placeholder.com/240x320.png?text=' + chosenVideos[1]?.title} alt={chosenVideos[1]?.title} />
+                <img className='mobileImg' src={'https://via.placeholder.com/240x320.png?text=' + chosenVideos[1]?.title} alt={chosenVideos[1]?.title} />
               }
             </div>
           </div>

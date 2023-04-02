@@ -23,7 +23,7 @@
   width: 30%;
   box-sizing: border-box;
   border-radius: 5px;
-  height: fit-content;
+  height: 100%;
 }
 
 .similaritiesSection {
@@ -85,12 +85,12 @@ ul {
     width: calc(100% - 40px);
   }
 
-  .movieComparison{
-    font-size: 10px;
-  }
-
   .gridSection {
     padding-top: calc(250px + 40px);
+  }
+
+  .mobileImg {
+    width: 25vw;
   }
 
   .box {
